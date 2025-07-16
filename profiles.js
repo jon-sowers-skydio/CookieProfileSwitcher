@@ -329,8 +329,7 @@ function changeProfile(event){
 			//$('#storage_label').text(JSON.stringify(newProfileData));
 			
 			chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
-				var code = 'window.location.reload();';
-				chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
+				chrome.tabs.reload(arrayOfTabs[0].id);
 			});
 			
 		});
